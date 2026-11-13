@@ -1,7 +1,7 @@
 title: Automated C2 Beaconing Pattern Detection (Fixed Payload & Interval)
 id: 3c7e91d4-2a18-4f6b-b830-1d4e9a7c21b5
 status: experimental
-description: Draft based on the lab's outgoing_connections.log. PacketSize and BeaconIntervalSeconds require a documented parser or field mapping. These are not standard Sysmon Event ID 3 fields.
+description: Draft based on the lab's outgoing_connections.log and the network rule builder screenshot. PacketSize and BeaconIntervalSeconds require a documented parser or field mapping. These are not standard Sysmon Event ID 3 fields.
 author: Rajat Rupam
 date: 2026-11-13
 references:
@@ -16,7 +16,6 @@ detection:
   selection:
     EventID: 3
     Initiated: 'true'
-    DestinationPort: 443
     PacketSize: 97
     BeaconIntervalSeconds: 1800
   condition: selection
