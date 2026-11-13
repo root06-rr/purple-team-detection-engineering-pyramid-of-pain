@@ -26,11 +26,13 @@ The screenshot is a sandbox summary, not a raw Sysmon Event ID 11 record. The co
 
 The original notes map the activity to Exfiltration, tactic `TA0010`, and Data Staged, technique `T1074.001`.
 
-## Related files
+## Indicator screenshot
 
-- [File staging rule](../rules/lotl_cmd_temp_data_staging.yml)
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [sample6.exe process lineage and file staging](../evidence/14_case6_sample6_process_lineage.png)
+
+## Evidence screenshot
+
+- [File staging Sigma rule](../evidence/15_case6_sigma_exfiltration_rule.png)
 
 ## What this case shows
 
