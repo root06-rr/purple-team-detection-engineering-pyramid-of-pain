@@ -19,10 +19,13 @@ The notes describe a new sample that used a domain name instead of the previousl
 
 A DNS sinkhole or deny rule was configured for the domain and its subdomains in the simulated DNS rule manager.
 
-## Related files
+## Indicator screenshot
 
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [sample3.exe DNS lookup](../evidence/06_case3_sample3_dns_lookup.png)
+
+## Evidence screenshot
+
+- [DNS sinkhole rule](../evidence/07_case3_dns_sinkhole_rule.png)
 
 ## What this case shows
 
