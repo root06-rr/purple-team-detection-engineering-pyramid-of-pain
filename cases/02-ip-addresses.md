@@ -21,10 +21,13 @@ The replacement sample hash in the original notes is abbreviated. It is not a co
 
 An outbound deny rule was configured on the simulated perimeter firewall for traffic to the destination IP.
 
-## Related files
+## Indicator screenshot
 
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [sample2.exe network telemetry](../evidence/04_case2_sample2_network_telemetry.png)
+
+## Evidence screenshot
+
+- [Firewall egress deny rule](../evidence/05_case2_firewall_egress_deny.png)
 
 ## What this case shows
 
