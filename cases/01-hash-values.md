@@ -20,10 +20,13 @@ The SHA-256 value recorded in the repository is:
 
 The hash was added to the EDR IOC blocklist. The notes describe this as preventing the sample from executing on the simulated endpoint.
 
-## Related files
+## Indicator screenshot
 
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [sample1.exe sandbox triage](../evidence/02_case1_sample1_sandbox_triage.png)
+
+## Evidence screenshot
+
+- [EDR hash blocklist](../evidence/03_case1_edr_hash_blocklist.png)
 
 ## What this case shows
 
