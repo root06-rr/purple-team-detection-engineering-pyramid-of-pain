@@ -1,0 +1,24 @@
+title: Alert on Potential Exfiltration through File Creation or Modification
+id: sysmon_file_creation_modification_temp
+status: experimental
+description: Detects file creation or modification events where child cmd.exe processes stage reconnaissance data into exfiltr8.log inside AppData\Local\Temp (Pyramid of Pain - TTPs).
+author: Rajat Rupam
+date: 2026-11-13
+references:
+  - https://attack.mitre.org/techniques/TA0010/
+  - https://attack.mitre.org/techniques/T1074/001/
+tags:
+  - attack.ta0010
+  - attack.exfiltration
+  - attack.file_creation
+  - attack.file_modification
+  - sysmon
+detection:
+  selection:
+    - EventID: 2
+      TargetFilename: '*\exfiltr8.log'
+      TargetPath: '*\AppData\Local\Temp\*'
+  condition: selection
+falsepositives:
+  - Legitimate use of file creation and modification in a user's temp folder.
+level: critical

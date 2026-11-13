@@ -1,0 +1,25 @@
+title: Automated C2 Beaconing Pattern Detection (Fixed Payload & Interval)
+id: 3c7e91d4-2a18-4f6b-b830-1d4e9a7c21b5
+status: experimental
+description: Detects recurring outbound C2 heartbeat connections matching a fixed 97-byte payload size at 1800-second (30-minute) intervals (Pyramid of Pain - Tools).
+author: Rajat Rupam
+date: 2026-11-13
+references:
+  - https://attack.mitre.org/techniques/T1071/001/
+tags:
+  - attack.command_and_control
+  - attack.t1071.001
+logsource:
+  category: network_connection
+  product: windows
+detection:
+  selection:
+    EventID: 3
+    Initiated: 'true'
+    DestinationPort: 443
+    PacketSize: 97
+    BeaconIntervalSeconds: 1800
+  condition: selection
+falsepositives:
+  - Custom internal health-check agents with identical fixed heartbeat sizes
+level: high
