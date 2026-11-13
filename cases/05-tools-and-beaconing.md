@@ -27,11 +27,14 @@ The current rule includes `PacketSize` and `BeaconIntervalSeconds`. These fields
 
 The original notes map the activity to Command and Control, technique `T1071.001`.
 
-## Related files
+## Indicator screenshot
 
-- [Network rule](../rules/c2_periodic_beacon_network_profile.yml)
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [Egress beacon log](../evidence/11_case5_egress_beacon_log.png)
+- [sample5.exe beacon network activity](../evidence/12_case5_sample5_beacon_network.png)
+
+## Evidence screenshot
+
+- [Network Sigma rule](../evidence/13_case5_sigma_network_rule.png)
 
 ## What this case shows
 
