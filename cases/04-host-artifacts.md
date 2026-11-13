@@ -24,11 +24,14 @@ The rule uses Event ID 13 and checks the registry target and value details. Its 
 
 The original notes map this activity to Defense Evasion, technique `T1562.001`.
 
-## Related files
+## Indicator screenshot
 
-- [Registry rule](../rules/win_defender_realtime_tampering.yml)
-- [Indicator record](../iocs/blocked_indicators.md)
-- [Evidence files](../evidence/)
+- [sample4.exe network staging](../evidence/08_case4_sample4_network_staging.png)
+- [Windows Defender registry tampering](../evidence/09_case4_registry_tampering.png)
+
+## Evidence screenshot
+
+- [Registry Sigma rule](../evidence/10_case4_sigma_registry_rule.png)
 
 ## What this case shows
 
