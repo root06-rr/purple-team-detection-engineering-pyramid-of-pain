@@ -1,7 +1,7 @@
 title: Windows Defender Real-Time Monitoring Disabled via Registry
 id: 8b4f3a12-7c91-4d2e-9a14-5f8e2c1b09a1
 status: experimental
-description: Detects unauthorized modification of the Windows Defender registry key to disable real-time protection (Pyramid of Pain - Host Artifacts).
+description: Detects a registry value change associated with disabling Windows Defender real-time protection. Confirm the exact field mapping against the source Sysmon event before use.
 author: Rajat Rupam
 date: 2026-11-13
 references:

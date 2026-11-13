@@ -1,7 +1,7 @@
-title: Alert on Potential Exfiltration through File Creation or Modification
-id: sysmon_file_creation_modification_temp
+title: Command Shell Creates File in User Temporary Directory
+id: 5c32a6b9-7a21-4e5b-8f4d-1c9a2b6e7d30
 status: experimental
-description: Detects file creation or modification events where child cmd.exe processes stage reconnaissance data into exfiltr8.log inside AppData\Local\Temp (Pyramid of Pain - TTPs).
+description: Detects cmd.exe creating exfiltr8.log in the user's temporary directory. The source screenshot shows the process and file activity, but no raw Sysmon event is available for validation.
 author: Rajat Rupam
 date: 2026-11-13
 references:
@@ -10,15 +10,17 @@ references:
 tags:
   - attack.ta0010
   - attack.exfiltration
-  - attack.file_creation
-  - attack.file_modification
+  - attack.t1074.001
   - sysmon
+logsource:
+  category: file_event
+  product: windows
 detection:
   selection:
-    - EventID: 2
-      TargetFilename: '*\exfiltr8.log'
-      TargetPath: '*\AppData\Local\Temp\*'
+    EventID: 11
+    Image|endswith: '\cmd.exe'
+    TargetFilename|contains: '\AppData\Local\Temp\exfiltr8.log'
   condition: selection
 falsepositives:
-  - Legitimate use of file creation and modification in a user's temp folder.
-level: critical
+  - Legitimate command shell activity that creates a file with this name in the user's temporary directory
+level: high
