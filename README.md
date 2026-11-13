@@ -70,6 +70,6 @@ All activity described here is simulated lab work. Indicators and hostnames are 
 
 This project is based on my original lab notes and observations documented in Notion.
 
-[View Original Lab Notes](https://app.notion.com/p/1-Summit-Detection-Engineering-Pyramid-of-Pain-3eaf055fceba8015b3d8d1dbf21f4892)
+[View Original Lab Notes](https://app.notion.com/p/1-Summit-Detection-Engineering-Pyramid-of-Pain-3eaf055fceba8015b3d8d1dbf21f4892?source=copy_link)
 
 The GitHub repository contains the organized case studies, available evidence screenshots, and detection rule drafts developed from those notes.
