@@ -12,7 +12,7 @@ This repository is a portfolio record of the lab work and the detection concepts
 - **Framework:** MITRE ATT&CK references included in the original notes and rule files
 - **Cases:** Hash values, IP addresses, domain names, host artifacts, tools, and TTPs
 - **Detection artifacts:** Three YAML Sigma-style rule drafts
-- **Indicator records:** Extracted hashes, IP addresses, domains, and host artifacts
+- **Indicators:** Recorded within the relevant case notes where available
 
 ## How the project is organized
 
@@ -20,7 +20,6 @@ This repository is a portfolio record of the lab work and the detection concepts
 | --- | --- |
 | [cases/](cases/) | The six lab cases, organized by Pyramid of Pain tier |
 | [rules/](rules/) | Three YAML detection rule drafts from the lab |
-| [iocs/](iocs/) | Indicators recorded in the lab notes and their documented response |
 | [evidence/](evidence/) | Existing evidence files from the original lab write-up |
 | [docs/rule-review.md](docs/rule-review.md) | Technical review notes and validation limits |
 | [docs/validation-results.md](docs/validation-results.md) | Checks completed against the existing evidence |
@@ -44,18 +43,18 @@ The case pages separate the observed lab activity, the response recorded in the 
 
 ## Detection rule status
 
-The three YAML files are retained as lab artifacts. Their YAML syntax has been checked, but this is not the same as validating them with a Sigma parser or testing them against raw event records.
+The three YAML files are retained as lab artifacts. YAML parsing has not been run, and the rules have not been validated with a Sigma parser or tested against raw event records.
 
 - The registry evidence shows the process, registry key, value name, and value. It does not include the raw Sysmon Event ID 13 record needed to confirm the exact field mapping.
 - The beacon evidence is a text-based egress log with timestamps, source, destination, port, and size. The current rule uses custom fields that need a documented mapping. Sysmon Event ID 3 does not provide the packet size and interval fields used by the rule.
-- The file staging rule now uses Sysmon Event ID 11 for file creation. The evidence shows cmd.exe creating the file, but it does not include the raw Sysmon event needed to test the rule.
+- The file staging rule uses Sysmon Event ID 11 for file creation. The evidence shows cmd.exe creating the file, but it does not include the raw Sysmon event needed to test the rule.
 
 See [the rule review](docs/rule-review.md) and [validation results](docs/validation-results.md) before treating any rule as operational or validated.
 
 ## What this project demonstrates
 
 - Working through a simulated threat-emulation sequence
-- Extracting and organizing file, network, domain, registry, and file activity indicators
+- Organizing file, network, domain, registry, and file activity indicators within the case notes
 - Relating defensive responses to the Pyramid of Pain
 - Writing YAML-based Sigma-style detection logic
 - Recording MITRE ATT&CK references from the lab material
@@ -63,6 +62,6 @@ See [the rule review](docs/rule-review.md) and [validation results](docs/validat
 
 ## Project status
 
-This repository contains the notes, rule drafts, indicator records, and evidence files from the lab. The repository does not currently include raw Sysmon event fixtures, a repeatable test harness, Sigma parser output, or documented rule match results. For that reason, I describe the YAML files as detection rule drafts that need further validation.
+This repository contains the case notes, rule drafts, and evidence files from the lab. It does not currently include raw Sysmon event fixtures, a repeatable test harness, Sigma parser output, or documented rule match results. For that reason, I describe the YAML files as detection rule drafts that need further validation.
 
 All activity described here is simulated lab work. Indicators and hostnames are retained as lab artifacts and should not be treated as live threat intelligence.
